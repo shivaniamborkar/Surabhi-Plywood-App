@@ -30,7 +30,7 @@ app.get("*", (req, res) =>
 //  res.send("Server is ready");
 //});
 
-app.use((req, res, next, err) => {
+app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
