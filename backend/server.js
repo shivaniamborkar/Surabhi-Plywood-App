@@ -4,6 +4,7 @@ import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
 import dotenv from "dotenv";
 import orderRouter from "./routers/orderRouter.js";
+const path = require("path");
 dotenv.config();
 
 const app = express();
@@ -21,10 +22,10 @@ mongoose.connect(
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter);
-//app.use(express.static(path.join(__dirname, "/frontend/build")));
-//app.get("*", (req, res) =>
-//  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
-//);
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
