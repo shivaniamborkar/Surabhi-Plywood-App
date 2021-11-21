@@ -1,19 +1,32 @@
+import bcrypt from "bcryptjs";
 const data = {
+  users: [
+    {
+      name: "Surabhi Plywood",
+      email: "admin@exampple.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: true,
+    },
+    {
+      name: "shivani",
+      email: "user@exampple.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: "1",
       name: "Red Oval Socket",
       category: "Sockets",
       image: "/images/s1a.png",
-      price: 0,
-      countInStock: 10,
+      price: 100,
+      countInStock: 0,
       brand: "xyz",
       rating: 4.5,
-      numReviews: 17,
-      description: "high quality product",
+      numReviews: 16,
+      description: "low quality product",
     },
     {
-      _id: "2",
       name: "Brown Socket",
       category: "Sockets",
       image: "/images/s2a.png",
@@ -25,7 +38,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "3",
       name: "Silver Socket",
       category: "Sockets",
       image: "/images/s3a.png",
@@ -37,7 +49,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "4",
       name: "Silver Brown Socket",
       category: "Sockets",
       image: "/images/s4a.png",
@@ -49,7 +60,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "5",
       name: "Sky Blue Socket",
       category: "Sockets",
       image: "/images/s5a.png",
@@ -61,7 +71,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "6",
       name: "Wave Socket",
       category: "Sockets",
       image: "/images/s6a.png",
@@ -73,7 +82,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "7",
       name: "Temple Brown Socket",
       category: "Sockets",
       image: "/images/s7a.png",
@@ -85,7 +93,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "8",
       name: "Triangle Brown Socket",
       category: "Sockets",
       image: "/images/s8a.png",
@@ -97,7 +104,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "9",
       name: "Double Ring Socket",
       category: "Sockets",
       image: "/images/s9a.png",
@@ -109,7 +115,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "10",
       name: "Temple Silver Socket",
       category: "Sockets",
       image: "/images/s10a.png",
@@ -121,7 +126,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "11",
       name: "Orange Shiny Socket",
       category: "Sockets",
       image: "/images/s11a.png",
@@ -133,7 +137,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "12",
       name: "Red Tier Socket",
       category: "Sockets",
       image: "/images/s12a.png",
@@ -145,7 +148,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "13",
       name: "Grey Tier Socket",
       category: "Sockets",
       image: "/images/s13a.png",
@@ -157,7 +159,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "14",
       name: "Sky Blue Tier Socket",
       category: "Sockets",
       image: "/images/s14a.png",
@@ -169,7 +170,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "15",
       name: "Orange Tier Socket",
       category: "Sockets",
       image: "/images/s15a.png",
@@ -181,7 +181,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "16",
       name: "Lavender Tier Socket",
       category: "Sockets",
       image: "/images/s16a.png",
@@ -193,7 +192,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "17",
       name: "Brown Tier Socket",
       category: "Sockets",
       image: "/images/s17a.png",
@@ -205,7 +203,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "18",
       name: "Pink Triangle Socket",
       category: "Sockets",
       image: "/images/s18a.png",
@@ -217,7 +214,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "19",
       name: "Pink Half-Bubble Socket",
       category: "Sockets",
       image: "/images/s19a.png",
@@ -229,7 +225,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "20",
       name: "Pink Oval Socket",
       category: "Sockets",
       image: "/images/s20a.png",
@@ -241,7 +236,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "21",
       name: "Pink Hexagonal Socket",
       category: "Sockets",
       image: "/images/s21a.png",
@@ -253,7 +247,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "22",
       name: "Brown Double-face Temple Socket",
       category: "Sockets",
       image: "/images/s22a.png",
@@ -265,7 +258,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "23",
       name: "Brown Bell Shaped Socket",
       category: "Sockets",
       image: "/images/s23a.png",
@@ -277,7 +269,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "24",
       name: "Brown Sliding Socket",
       category: "Sockets",
       image: "/images/s24a.png",
@@ -289,12 +280,11 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "25",
       name: "Silver Brown flat bell Socket",
       category: "Sockets",
       image: "/images/s25a.png",
       price: 0,
-      countInStock: 6,
+      countInStock: 7,
       brand: "xyz",
       rating: 4.5,
       numReviews: 17,
