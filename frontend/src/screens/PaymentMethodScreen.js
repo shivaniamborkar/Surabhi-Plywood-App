@@ -9,7 +9,7 @@ export default function PaymentMethodScreen(props) {
   if (!shippingAddress.address) {
     props.history.push("/shipping");
   }
-  const [paymentMethod, setPaymentMethod] = useState("RazorPay");
+  const [paymentMethod, setPaymentMethod] = useState("Paypal");
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -26,14 +26,14 @@ export default function PaymentMethodScreen(props) {
         <div>
           <input
             type="radio"
-            id="razorpay"
-            value="RazorPay"
+            id="paypal"
+            value="Paypal"
             name="paymentMethod"
             required
             checked
             onChange={(e) => setPaymentMethod(e.target.value)}
           ></input>
-          <label htmlFor="razorpay">RazorPay</label>
+          <label htmlFor="paypal">PayPal</label>
         </div>
         <div>
           <button className="primary" type="submit">
